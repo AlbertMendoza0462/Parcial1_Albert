@@ -1,14 +1,14 @@
 package edu.ucne.parcial1_albert.data
 
 import androidx.room.Database
-import edu.ucne.parcial1_albert.data.entity.Entity
 import androidx.room.RoomDatabase
+import edu.ucne.parcial1_albert.data.entity.Entity
 
 @Database(
     entities = [
         Entity::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class AppDataBase : RoomDatabase() {
