@@ -14,8 +14,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
-import edu.ucne.parcial1_albert.ui.entity.ConsultaEntityScreen
-import edu.ucne.parcial1_albert.ui.entity.EntityScreen
+import edu.ucne.parcial1_albert.ui.entity.ArticuloScreen
+import edu.ucne.parcial1_albert.ui.entity.ConsultaArticuloScreen
 import edu.ucne.parcial1_albert.ui.theme.Parcial1_AlbertTheme
 
 @AndroidEntryPoint
@@ -30,12 +30,12 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     val navController = rememberNavController()
-                    NavHost(navController = navController, startDestination = "ConsultaEntityScreen") {
-                        composable(route = "ConsultaEntityScreen") {
-                            ConsultaEntityScreen(navHostController = navController)
+                    NavHost(navController = navController, startDestination = "ConsultaArticuloScreen") {
+                        composable(route = "ConsultaArticuloScreen") {
+                            ConsultaArticuloScreen(navHostController = navController)
                         }
-                        composable(route = "EntityScreen") {
-                            EntityScreen(navHostController = navController)
+                        composable(route = "ArticuloScreen") {
+                            ArticuloScreen(navHostController = navController)
                         }
                     }
                 }

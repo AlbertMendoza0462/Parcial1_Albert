@@ -29,7 +29,7 @@ object AppModule {
     }
 
     @Provides
-    fun ProvideEntityDAO(appDataBase: AppDataBase): ArticuloDao {
+    fun ProvideArticuloDAO(appDataBase: AppDataBase): ArticuloDao {
         return appDataBase.articuloDao
     }
 
