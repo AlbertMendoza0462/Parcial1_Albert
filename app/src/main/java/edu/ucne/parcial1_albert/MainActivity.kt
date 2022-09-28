@@ -37,7 +37,10 @@ class MainActivity : ComponentActivity() {
                         }
                         composable(route = Screen.RegistroArticuloScreen.Route + "/{id}") {navEntry ->
                             val id = navEntry.arguments?.getString("id") ?: "0"
-                            ArticuloScreen(navHostController = navController, ArticuloId = id)
+                            ArticuloScreen(navHostController = navController, ArticuloId = id.toInt())
+                        }
+                        composable(route = Screen.RegistroArticuloScreen.Route) {navEntry ->
+                            ArticuloScreen(navHostController = navController)
                         }
                     }
                 }
