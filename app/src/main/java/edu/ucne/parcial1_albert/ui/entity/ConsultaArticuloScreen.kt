@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
+import edu.ucne.parcial1_albert.utils.Screen
 
 
 @Composable
@@ -92,7 +93,7 @@ fun ConsultaArticuloScreen(
                                     .width(70.dp)
                                     .padding(8.dp)
                             )
-                            OutlinedButton(onClick = { navHostController.navigate("ArticuloScreen/" + it.ArticuloId) }) {
+                            OutlinedButton(onClick = { navHostController.navigate(Screen.RegistroArticuloScreen.Route + "/" + it.ArticuloId) }) {
                                 Icon(Icons.Default.Edit, contentDescription = "Editar")
                             }
                         }
