@@ -16,7 +16,8 @@ import androidx.navigation.NavHostController
 @Composable
 fun ArticuloScreen(
     navHostController: NavHostController,
-    viewModel: ArticuloViewModel = hiltViewModel()
+    viewModel: ArticuloViewModel = hiltViewModel(),
+    ArticuloId: String?
 ) {
     Column(modifier = Modifier.fillMaxSize()) {
         Scaffold(
