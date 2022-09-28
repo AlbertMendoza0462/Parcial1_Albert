@@ -8,6 +8,8 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import edu.ucne.parcial1_albert.data.AppDataBase
+import edu.ucne.parcial1_albert.data.Repository.ArticuloRepository
+import edu.ucne.parcial1_albert.data.dao.ArticuloDao
 import javax.inject.Singleton
 
 @Module
@@ -26,13 +28,13 @@ object AppModule {
             .build()
     }
 
-//    @Provides
-//    fun ProvideEntityDAO(appDataBase: AppDataBase): EntityDao {
-//        return appDataBase.entityDao
-//    }
-//
-//    @Provides
-//    fun provideEntityRepository(entityDao: EntityDao): EntityRepository {
-//        return EntityRepository(entityDao)
-//    }
+    @Provides
+    fun ProvideEntityDAO(appDataBase: AppDataBase): ArticuloDao {
+        return appDataBase.articuloDao
+    }
+
+    @Provides
+    fun provideArticuloRepository(articuloDao: ArticuloDao): ArticuloRepository {
+        return ArticuloRepository(articuloDao)
+    }
 }
