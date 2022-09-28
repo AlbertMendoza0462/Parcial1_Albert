@@ -37,18 +37,27 @@ fun ArticuloScreen(
                     label = { Text(text = "Descripcion") },
                     modifier = Modifier.align(Alignment.CenterHorizontally),
                     value = viewModel.Descripcion,
-                    onValueChange = { viewModel.Descripcion = it })
+                    onValueChange = {
+                        viewModel.Descripcion = it
+                    })
                 OutlinedTextField(
                     label = { Text(text = "Marca") },
                     modifier = Modifier.align(Alignment.CenterHorizontally),
                     value = viewModel.Marca,
-                    onValueChange = { viewModel.Marca = it })
+                    onValueChange = {
+                        viewModel.Marca = it
+                    })
                 OutlinedTextField(
                     label = { Text(text = "Existencia") },
                     modifier = Modifier.align(Alignment.CenterHorizontally),
                     value = viewModel.Existencia.toString(),
                     onValueChange = {
-                        viewModel.Existencia = it.toInt()
+                        try {
+                            it.toDouble()
+                            viewModel.Existencia = it.toDouble()
+                        } catch (_: Exception) {
+
+                        }
                     })
                 OutlinedButton(
                     onClick = {

@@ -9,5 +9,5 @@ data class Articulo(
     val ArticuloId: Int=0,
     val Descripcion: String="",
     val Marca: String="",
-    val Existencia: Int=0
+    val Existencia: Double=0.0
 )
