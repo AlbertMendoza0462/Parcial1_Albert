@@ -17,6 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import edu.ucne.parcial1_albert.ui.entity.ArticuloScreen
 import edu.ucne.parcial1_albert.ui.entity.ConsultaArticuloScreen
 import edu.ucne.parcial1_albert.ui.theme.Parcial1_AlbertTheme
+import edu.ucne.parcial1_albert.utils.Screen
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -30,12 +31,13 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     val navController = rememberNavController()
-                    NavHost(navController = navController, startDestination = "ConsultaArticuloScreen") {
-                        composable(route = "ConsultaArticuloScreen") {
+                    NavHost(navController = navController, startDestination = Screen.ConsultaArticuloScreen.Route) {
+                        composable(route = Screen.ConsultaArticuloScreen.Route) {
                             ConsultaArticuloScreen(navHostController = navController)
                         }
-                        composable(route = "ArticuloScreen") {
-                            ArticuloScreen(navHostController = navController)
+                        composable(route = Screen.RegistroArticuloScreen.Route + "/{id}") {navEntry ->
+                            val id = navEntry.arguments?.getString("id")
+                            ArticuloScreen(navHostController = navController, ArticuloId = id)
                         }
                     }
                 }
