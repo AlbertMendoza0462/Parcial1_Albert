@@ -31,7 +31,7 @@ fun ConsultaArticuloScreen(
                 )
             },
             floatingActionButton = {
-                FloatingActionButton(onClick = { navHostController.navigate("ArticuloScreen") }) {
+                FloatingActionButton(onClick = { navHostController.navigate(Screen.RegistroArticuloScreen.Route) }) {
                     Icon(imageVector = Icons.Default.Add, contentDescription = null)
                 }
             }
