@@ -2,15 +2,16 @@ package edu.ucne.parcial1_albert.data
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import edu.ucne.parcial1_albert.data.entity.Entity
+import edu.ucne.parcial1_albert.data.dao.ArticuloDao
+import edu.ucne.parcial1_albert.data.entity.Articulo
 
 @Database(
     entities = [
-        Entity::class
+        Articulo::class
     ],
-    version = 2,
+    version = 1,
     exportSchema = false
 )
 abstract class AppDataBase : RoomDatabase() {
-    //abstract val entityDao: EntityDao
+    abstract val articuloDao: ArticuloDao
 }
