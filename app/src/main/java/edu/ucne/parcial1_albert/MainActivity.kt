@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
                             ConsultaArticuloScreen(navHostController = navController)
                         }
                         composable(route = Screen.RegistroArticuloScreen.Route + "/{id}") {navEntry ->
-                            val id = navEntry.arguments?.getString("id")
+                            val id = navEntry.arguments?.getString("id") ?: "0"
                             ArticuloScreen(navHostController = navController, ArticuloId = id)
                         }
                     }
