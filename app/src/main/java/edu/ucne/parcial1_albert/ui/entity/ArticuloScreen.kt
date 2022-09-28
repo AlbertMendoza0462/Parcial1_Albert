@@ -17,7 +17,7 @@ import androidx.navigation.NavHostController
 fun ArticuloScreen(
     navHostController: NavHostController,
     viewModel: ArticuloViewModel = hiltViewModel(),
-    ArticuloId: String?
+    ArticuloId: Int = 0
 ) {
     Column(modifier = Modifier.fillMaxSize()) {
         Scaffold(
