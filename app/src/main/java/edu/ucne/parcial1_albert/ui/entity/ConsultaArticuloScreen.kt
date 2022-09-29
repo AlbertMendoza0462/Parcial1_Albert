@@ -58,7 +58,14 @@ fun ConsultaArticuloScreen(
                                 text = "Nombre",
                                 modifier = Modifier
                                     .border(width = 1.dp, color = Color.Black)
-                                    .width(200.dp)
+                                    .width(100.dp)
+                                    .padding(8.dp)
+                            )
+                            Text(
+                                text = "Marca",
+                                modifier = Modifier
+                                    .border(width = 1.dp, color = Color.Black)
+                                    .width(100.dp)
                                     .padding(8.dp)
                             )
                             Text(
@@ -83,7 +90,14 @@ fun ConsultaArticuloScreen(
                                 text = it.Descripcion,
                                 modifier = Modifier
                                     .border(width = 1.dp, color = Color.Black)
-                                    .width(200.dp)
+                                    .width(100.dp)
+                                    .padding(8.dp)
+                            )
+                            Text(
+                                text = it.Marca,
+                                modifier = Modifier
+                                    .border(width = 1.dp, color = Color.Black)
+                                    .width(100.dp)
                                     .padding(8.dp)
                             )
                             Text(
@@ -93,7 +107,9 @@ fun ConsultaArticuloScreen(
                                     .width(70.dp)
                                     .padding(8.dp)
                             )
-                            OutlinedButton(onClick = { navHostController.navigate(Screen.RegistroArticuloScreen.Route + "/" + it.ArticuloId) }) {
+                            OutlinedButton(
+                                modifier = Modifier.height(35.dp),
+                                onClick = { navHostController.navigate(Screen.RegistroArticuloScreen.Route + "/" + it.ArticuloId) }) {
                                 Icon(Icons.Default.Edit, contentDescription = "Editar")
                             }
                         }

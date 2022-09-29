@@ -34,4 +34,16 @@ class ArticuloViewModel @Inject constructor(
             )
         }
     }
+
+    fun BuscarArticulo(id: Int) {
+        if (id > 0) {
+            viewModelScope.launch {
+                val articulo = articuloRepository.find(id)
+                ArticuloId = articulo.ArticuloId
+                Descripcion = articulo.Descripcion
+                Marca = articulo.Marca
+                Existencia = articulo.Existencia
+            }
+        }
+    }
 }

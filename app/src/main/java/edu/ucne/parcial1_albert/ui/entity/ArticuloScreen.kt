@@ -1,10 +1,7 @@
 package edu.ucne.parcial1_albert.ui.entity
 
 import android.widget.Toast
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -23,6 +20,7 @@ fun ArticuloScreen(
     viewModel: ArticuloViewModel = hiltViewModel(),
     ArticuloId: Int = 0
 ) {
+
     val context = LocalContext.current
     Column(modifier = Modifier.fillMaxSize()) {
         Scaffold(
@@ -38,6 +36,7 @@ fun ArticuloScreen(
                     .padding(it)
                     .padding(8.dp)
             ) {
+                Spacer(modifier = Modifier.height(100.dp))
                 OutlinedTextField(
                     label = { Text(text = "Descripcion") },
                     modifier = Modifier.align(Alignment.CenterHorizontally),
@@ -98,4 +97,6 @@ fun ArticuloScreen(
             }
         }
     }
+    if (ArticuloId > 0)
+        viewModel.BuscarArticulo(ArticuloId)
 }
