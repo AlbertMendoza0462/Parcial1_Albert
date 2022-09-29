@@ -9,7 +9,7 @@ import edu.ucne.parcial1_albert.data.entity.Articulo
     entities = [
         Articulo::class
     ],
-    version = 2,
+    version = 3,
     exportSchema = false
 )
 abstract class AppDataBase : RoomDatabase() {
